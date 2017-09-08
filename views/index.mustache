@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HUMANS FOR SALE</title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <form action="/login" method="post">
+          <input type="text" name="username" placeholder="username"/>
+          <input type="text" name="username" placeholder="password"/>
+          <button>Log In</button>
+
+        </form>
+      </div>
+      <button onclick="logout()">Log Out</button>
+    </header>
+    {{#users}}
+      <a href="/user/{{id}}" class="userBox">
+        <img src={{avatar}}></img>
+        <p class="nameField">{{name}}</p>
+        {{#job}}
+          <p class="jobField">{{job}}, {{company}}</p>
+        {{/job}}
+        {{^job}}
+          <p class="jobSearch">Available for hire</p>
+        {{/job}}
+      </a>
+    {{/users}}
+    <script src="functions.js"></script>
+  </body>
+</html>
